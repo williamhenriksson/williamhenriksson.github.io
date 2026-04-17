@@ -1,0 +1,125 @@
+﻿<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Boka — Pärson Hotels</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site_header_global">
+    <div class="page_shell_global">
+      <a class="brand_global" href="index.html">Pärson Hotels <span class="brand_mark_global">PH</span></a>
+      <nav class="main_nav_global">
+        <ul class="navigation_list_global">
+          <li><a href="pics.html" data-sv="Galleri" data-en="Gallery">Galleri</a></li>
+          <li><a href="booking.html" data-sv="Boka" data-en="Book">Boka</a></li>
+          <li><a href="#price" data-sv="Priser" data-en="Prices">Priser</a></li>
+          <li><a href="about.html" data-sv="Om oss" data-en="About">Om oss</a></li>
+        </ul>
+      </nav>
+      <div class="lang_switcher_global">
+        <button class="lang_btn_global" data-lang="sv">SV</button>
+        <button class="lang_btn_global" data-lang="en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="booking" class="page_section_global page_shell_global">
+      <div class="section_heading_global">
+        <h2 data-sv="Bokning" data-en="Booking">Bokning</h2>
+        <p data-sv="Enkelt och snabbt — välj datum och fyll i dina uppgifter." data-en="Easy and fast — pick dates and enter your details.">Enkelt och snabbt — välj datum och fyll i dina uppgifter.</p>
+      </div>
+      <div class="calendar_section_booking">
+        <div>
+          <div id="calendarContainer" class="calendar_month_booking"></div>
+          <div class="calendar_legend_booking">
+            <span class="legend_chip_booking available_booking"></span> <span data-sv="Ledigt" data-en="Available">Ledigt</span>
+            <span class="legend_chip_booking booked_booking"></span> <span data-sv="Bokat" data-en="Booked">Bokat</span>
+          </div>
+        </div>
+        <aside>
+          <form id="bookingForm" class="booking_form_booking" aria-labelledby="booking-heading">
+            <div class="form_group_booking">
+              <label for="selectedDate" id="booking-heading" data-sv="Valt datum" data-en="Selected date">Valt datum</label>
+              <input type="text" id="selectedDate" name="date" readonly aria-readonly="true" placeholder="—">
+            </div>
+            <div class="form_group_booking">
+              <label for="name" data-sv="Namn" data-en="Name">Namn</label>
+              <input id="name" name="name" required>
+            </div>
+            <div class="form_group_booking">
+              <label for="email" data-sv="E-post" data-en="Email">E-post</label>
+              <input id="email" type="email" name="email" required>
+            </div>
+            <div class="form_group_booking">
+              <label for="room" data-sv="Rumstyp" data-en="Room type">Rumstyp</label>
+              <select id="room" name="room">
+                <option value="single" data-sv="Enkelrum" data-en="Single">Enkelrum</option>
+                <option value="double" data-sv="Dubbelrum" data-en="Double">Dubbelrum</option>
+                <option value="suite" data-sv="Lyxsvit" data-en="Suite">Lyxsvit</option>
+              </select>
+            </div>
+            <p><button class="button_primary_global" type="submit" data-sv="Bekräfta bokning" data-en="Confirm booking">Bekräfta bokning</button></p>
+            <div id="bookingConfirmation" class="booking_confirmation_booking" role="status" aria-live="polite"></div>
+          </form>
+        </aside>
+      </div>
+
+    </section>
+
+    <section id="price" class="page_section_global page_shell_global">
+      <div class="section_heading_global">
+        <h2 data-sv="Priser" data-en="Prices">Priser</h2>
+        <p data-sv="Alla priser per natt inklusive moms. Ingen dolda avgifter." data-en="All prices per night including VAT. No hidden fees.">Alla priser per natt inklusive moms. Ingen dolda avgifter.</p>
+      </div>
+      <div class="price_grid_price">
+        <div class="price_card_price">
+          <h3 data-sv="Enkelrum" data-en="Single">Enkelrum</h3>
+          <span class="price_amount_price">795 kr</span>
+          <ul>
+            <li data-sv="En person" data-en="One person">En person</li>
+            <li data-sv="Inkl. frukostbuffé" data-en="Incl. breakfast buffet">Inkl. frukostbuffé</li>
+            <li data-sv="WiFi & parkering" data-en="WiFi & parking">WiFi & parkering</li>
+          </ul>
+          <a class="button_secondary_global" href="#booking" data-sv="Boka enkelrum" data-en="Book single">Boka enkelrum</a>
+        </div>
+        <div class="price_card_price">
+          <h3 data-sv="Dubbelrum" data-en="Double">Dubbelrum</h3>
+          <span class="price_amount_price">1095 kr</span>
+          <ul>
+            <li data-sv="Upp till två personer" data-en="Up to two people">Upp till två personer</li>
+            <li data-sv="Inkl. frukostbuffé" data-en="Incl. breakfast buffet">Inkl. frukostbuffé</li>
+            <li data-sv="WiFi & parkering" data-en="WiFi & parking">WiFi & parkering</li>
+          </ul>
+          <a class="button_secondary_global" href="#booking" data-sv="Boka dubbelrum" data-en="Book double">Boka dubbelrum</a>
+        </div>
+        <div class="price_card_price">
+          <h3 data-sv="Lyxsvit" data-en="Suite">Lyxsvit</h3>
+          <span class="price_amount_price">2195 kr</span>
+          <ul>
+            <li data-sv="Upp till fyra personer" data-en="Up to four people">Upp till fyra personer</li>
+            <li data-sv="Inkl. frukostbuffé" data-en="Incl. breakfast buffet">Inkl. frukostbuffé</li>
+            <li data-sv="WiFi, parkering & jacuzzi" data-en="WiFi, parking & jacuzzi">WiFi, parkering & jacuzzi</li>
+          </ul>
+          <a class="button_secondary_global" href="#booking" data-sv="Boka lyxsvit" data-en="Book suite">Boka lyxsvit</a>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:2rem"><em data-sv="Priser kan variera beroende på säsong. Kontakta oss för grupper eller längre vistelser." data-en="Prices may vary depending on season. Contact us for groups or longer stays.">Priser kan variera beroende på säsong. Kontakta oss för grupper eller längre vistelser.</em></p>
+    </section>
+  </main>
+
+  <footer class="site_footer_global">
+    <div class="page_shell_global">
+      <div>
+        <h3>Pärson Hotels</h3>
+        <p data-sv="Personlig service sedan 2023" data-en="Personal service since 2023">Personlig service sedan 2023</p>
+      </div>
+      <div class="footer_links_global"><a href="index.html" data-sv="Till startsidan" data-en="Home">Till startsidan</a></div>
+    </div>
+  </footer>
+
+  <script src="functions.js" defer></script>
+</body>
+</html>
