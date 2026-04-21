@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap');
 
 :root {
   --navy: #0f1d3b;
@@ -400,4 +400,13 @@ main {
 .lightbox_global img {
   max-width: min(1000px, 88vw);
   max-height: 82vh;
+}
+@media (min-width: 720px) {
+  .hero_section_index {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .gallery_grid_global {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
