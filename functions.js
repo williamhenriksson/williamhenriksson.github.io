@@ -1,4 +1,5 @@
-﻿(function(){
+﻿
+(function(){
   const state = { selected_booking: null };
 
   function q(sel){return document.querySelector(sel)}
@@ -27,6 +28,7 @@
     });
   }
 
+
   function buildCalendar(container, year = new Date().getFullYear(), month = new Date().getMonth()){
     if(!container) return;
     const first = new Date(year, month, 1);
@@ -43,10 +45,12 @@
     const grid = document.createElement('div');
     grid.className = 'calendar_grid_booking';
 
+ 
     const weekDays = ['M','T','O','T','F','L','S'];
     weekDays.forEach(d=>{ const s=document.createElement('span'); s.textContent=d; grid.appendChild(s)});
 
-    const offset = (first.getDay()+6)%7;
+
+    const offset = (first.getDay()+6)%7; // convert Sun=0 to 6
     for(let i=0;i<offset;i++){ const e=document.createElement('div'); grid.appendChild(e) }
 
     for(let d=1; d<=daysInMonth; d++){
@@ -56,6 +60,7 @@
       btn.textContent = d;
       btn.dataset.date = dt.toISOString().slice(0,10);
       btn.setAttribute('aria-label', `Datum ${d} ${first.toLocaleString(navigator.language,{month:'long'})}`);
+
 
       const day = dt.getDay();
       const today = new Date();
@@ -71,6 +76,7 @@
     container.innerHTML='';
     container.appendChild(heading);
     container.appendChild(grid);
+
 
     qa('.calendar_nav_booking', container).forEach(btn=>{
       btn.addEventListener('click', ()=>{
@@ -104,6 +110,7 @@
       if(!date){ confirmation.textContent = 'Välj ett datum först.'; return }
       if(!name || !email){ confirmation.textContent = 'Fyll i namn och e-post.'; return }
 
+     
       confirmation.textContent = 'Tack! Din förfrågan är mottagen.';
       form.reset();
       state.selected_booking = null;
@@ -111,12 +118,14 @@
     });
   }
 
+ 
   function initGallery(){
     const gallery = q('.gallery_grid_global');
     if(!gallery) return;
     const images = qa('.gallery_item_global img');
     let currentIndex = 0;
 
+   
     const lightbox_global = document.createElement('div');
     lightbox_global.className = 'lightbox_global';
     lightbox_global.innerHTML = `
@@ -179,9 +188,9 @@
     });
   }
 
+ 
   document.addEventListener('DOMContentLoaded', ()=>{
     initLang();
-    setLanguage('sv');
     const cal = q('#calendarContainer');
     if(cal) buildCalendar(cal);
     initBookingForm();
