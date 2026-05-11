@@ -69,16 +69,18 @@ main {
 }
 
 .site_header_global .page_shell_global {
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: .6rem;
-  padding: .45rem 0;
+  gap: .75rem;
+  padding: .65rem 0;
 }
 
 .site_footer_global .page_shell_global {
   flex-direction: column;
-  align-items: flex-start;
-  gap: .5rem;
+  align-items: center;
+  gap: .75rem;
   padding: .9rem 0;
+  text-align: center;
 }
 
 .brand_global {
@@ -99,10 +101,13 @@ main {
 .main_nav_global ul {
   list-style: none;
   gap: .5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .lang_switcher_global {
   gap: .4rem;
+  justify-content: center;
 }
 
 .main_nav_global a,
@@ -163,9 +168,15 @@ main {
 .hero_section_index {
   display: grid;
   gap: 1rem;
-  padding: 1rem;
+  padding: 2rem 1rem;
   background: var(--navy);
   color: var(--white);
+  text-align: center;
+}
+
+.hero_content_index {
+  max-width: 720px;
+  margin-inline: auto;
 }
 
 .hero_content_index h1,
@@ -218,12 +229,28 @@ main {
 
 .reviews_grid_index,
 .content_grid_about,
-.price_grid_price,
-.calendar_section_booking {
+.price_grid_price {
   display: grid;
   grid-template-columns: 1fr;
   gap: .8rem;
   place-items: center;
+}
+
+.calendar_section_booking {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  place-items: stretch;
+  align-items: start;
+  width: min(1100px, 100%);
+  margin-inline: auto;
+  padding: 0 1rem;
+}
+
+.calendar_month_booking {
+  width: 100%;
+  min-height: 480px;
+  padding: 1.25rem;
 }
 
 .gallery_item_global {
@@ -409,7 +436,6 @@ main {
   max-height: 82vh;
 }
 
-/* Inline style replacements */
 .price_disclaimer {
   text-align: center;
   margin-top: 10%;
@@ -423,11 +449,58 @@ main {
   text-align: center;
   margin-top: 5%;
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .column { width: 100%; }
 }
 
+@media (max-width: 900px) {
+  .site_header_global .page_shell_global,
+  .site_footer_global .page_shell_global {
+    align-items: center;
+  }
 
-@media (min-width: 600px) and (max-width: 768px) {
-    .column { width: 50%; }
+  .site_footer_global .page_shell_global {
+    text-align: center;
+  }
+}
+
+@media (min-width: 900px) {
+  .site_header_global .page_shell_global {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: .45rem 0;
+  }
+
+  .main_nav_global ul {
+    justify-content: flex-start;
+  }
+
+  .lang_switcher_global {
+    justify-content: flex-end;
+    margin-left: auto;
+  }
+
+  .site_footer_global .page_shell_global {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .hero_section_index {
+    padding: 3rem 1rem;
+    text-align: left;
+  }
+
+  .hero_content_index {
+    margin-inline: 0;
+  }
+
+  .price_grid_price {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+    gap: 1rem;
+  }
+
 }
